@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Elsner_Storelocator>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Elsner_Storelocator>
+    </modules>
+</config> 

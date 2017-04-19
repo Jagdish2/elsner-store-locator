@@ -1,0 +1,29 @@
+<form method="POST" id='item_form' name='item_form' enctype="multipart/form-data">
+    Zip Code:<br>
+    <input type="number" name="zip_code"  placeholder="Enter Zip Code" required>
+    <br>
+    <input type="button" value="Submit" onclick="getData()"><br/>
+    <div class="table_message"></div>
+</form>
+<script type="text/javascript">
+
+function getData()
+{
+    var formData = new FormData(jQuery('form[name="item_form"]').get(0));
+    var url = "<?php echo $this->getBaseUrl().'storelocator/index/getData' ?>";
+    jQuery.ajax({
+            url: url,
+            dataType: 'json',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            cache: false,
+            success: function(data){
+                  
+                    jQuery('.table_message').html(data.message);
+                    }
+                });
+    return false;
+};      
+</script>
